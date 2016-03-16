@@ -1,1 +1,1 @@
-# notebookapp
+# sample notebook application

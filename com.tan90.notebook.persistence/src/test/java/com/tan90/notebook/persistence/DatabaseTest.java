@@ -12,7 +12,7 @@ public class DatabaseTest {
 
 	@Test
 	public void connectionTest() {
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("todo_pu");
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("notebook_pu");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		assertNotNull(entityManager);
 	}

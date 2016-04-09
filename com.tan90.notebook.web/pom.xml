@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.tan90.notebook</groupId>
+    <artifactId>com.tan90.notebook.parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <groupId>com.tan90.notebook.web</groupId>
+  <artifactId>com.tan90.notebook.web</artifactId>
+  <packaging>war</packaging>
+  <dependencies>
+  	<!-- JAX-RS -->
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-api</artifactId>
+            <version>${jaxrs.version}</version>
+        </dependency>
+        <!-- Jersey 2.19 -->
+        <dependency>
+            <groupId>org.glassfish.jersey.containers</groupId>
+            <artifactId>jersey-container-servlet</artifactId>
+            <version>${jersey2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.glassfish.jersey.core</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey2.version}</version>
+        </dependency>
+        <dependency>
+  			<groupId>org.glassfish.jersey.media</groupId>
+  			<artifactId>jersey-media-json-jackson</artifactId>
+  			<version>2.22</version>
+		</dependency>
+        <dependency>
+  			<groupId>com.tan90.notebook</groupId>
+  			<artifactId>com.tan90.notebook.service</artifactId>
+  			<version>${project.version}</version>
+  		</dependency>
+  		<dependency>
+  			<groupId>com.tan90.notebook</groupId>
+  			<artifactId>com.tan90.notebook.to</artifactId>
+  			<version>${project.version}</version>
+  		</dependency>
+  </dependencies>
+</project>

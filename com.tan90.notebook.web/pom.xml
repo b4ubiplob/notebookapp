@@ -5,7 +5,6 @@
     <artifactId>com.tan90.notebook.parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <groupId>com.tan90.notebook.web</groupId>
   <artifactId>com.tan90.notebook.web</artifactId>
   <packaging>war</packaging>
   <dependencies>
@@ -15,7 +14,7 @@
             <artifactId>javax.ws.rs-api</artifactId>
             <version>${jaxrs.version}</version>
         </dependency>
-        <!-- Jersey 2.19 -->
+         <!-- Jersey 2.19 -->
         <dependency>
             <groupId>org.glassfish.jersey.containers</groupId>
             <artifactId>jersey-container-servlet</artifactId>
@@ -41,10 +40,34 @@
   			<artifactId>com.tan90.notebook.service</artifactId>
   			<version>${project.version}</version>
   		</dependency>
-  		<dependency>
-  			<groupId>com.tan90.notebook</groupId>
-  			<artifactId>com.tan90.notebook.to</artifactId>
-  			<version>${project.version}</version>
-  		</dependency>
   </dependencies>
+
+  <build>
+		<finalName>Notebook</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>sonar-maven-plugin</artifactId>
+					<version>2.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>2.5.1</version>
+					<inherited>true</inherited>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.0</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+   
 </project>

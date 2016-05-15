@@ -1,0 +1,10 @@
+<table class="table">
+	<tr ng-repeat="notebook in notebooks">
+		<td><a href="#/notebooks/{{notebook.id}}/view">{{notebook.name}}</a>
+		<td><a class="btn btn-primary" href="#/notebooks/{{notebook.id}}/view">View</a></td>
+		<td><a class="btn btn-danger"  ng-click="deleteNotebook(notebook)">Delete</a></a>
+	</tr>
+</table>
+
+
+<p><a href="#/notebooks/new">Create Another Notebook</a>

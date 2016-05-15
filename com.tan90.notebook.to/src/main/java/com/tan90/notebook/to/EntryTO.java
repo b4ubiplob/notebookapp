@@ -12,6 +12,7 @@ public class EntryTO {
 	private String title;
 	private int notebookId;
 	private int parentid;
+	private int entryStatusId;
 
 	public int getId() {
 		return id;
@@ -75,6 +76,14 @@ public class EntryTO {
 
 	public void setParentid(int parentid) {
 		this.parentid = parentid;
+	}
+
+	public int getEntryStatusId() {
+		return entryStatusId;
+	}
+
+	public void setEntryStatusId(int entryStatusId) {
+		this.entryStatusId = entryStatusId;
 	}
 
 }

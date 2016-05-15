@@ -1,4 +1,4 @@
-package com.tan90.notebook.web;
+package com.tan90.notebook.web.resources;
 
 import java.util.List;
 

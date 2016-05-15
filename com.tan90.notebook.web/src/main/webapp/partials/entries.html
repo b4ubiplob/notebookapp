@@ -1,0 +1,11 @@
+<ul>
+	<li ng-repeat="entry in entries">
+		<a href="#/entries/{{entry.id}}/view">{{entry.title}}</a>
+		
+		<p>{{entry.description}}</p>
+	</li>
+</ul>
+
+<p><a href="#/entries/new">Create Entry</a></p>
+
+<p><a href="#/notebooks/new">Create Notebook</a></p>

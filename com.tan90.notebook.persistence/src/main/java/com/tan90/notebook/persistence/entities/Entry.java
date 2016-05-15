@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -23,7 +24,10 @@ import org.hibernate.annotations.Type;
  * 
  */
 @Entity
-@NamedQuery(name="Entry.findAll", query="SELECT e FROM Entry e")
+@NamedQueries({
+	@NamedQuery(name="Entry.findAll", query="SELECT e FROM Entry e"),
+	@NamedQuery(name="Entry.findByNotebooks", query="SELECT e FROM Entry e WHERE e.notebook IN :notebookList")
+})
 public class Entry implements DbEntity {
 	private static final long serialVersionUID = 1L;
 
@@ -50,10 +54,10 @@ public class Entry implements DbEntity {
 	//bi-directional many-to-one association to Entry
 	@ManyToOne
 	@JoinColumn(name="parent_id")
-	private Entry entry;
+	private Entry parent;
 
 	//bi-directional many-to-one association to Entry
-	@OneToMany(mappedBy="entry")
+	@OneToMany(mappedBy="parent")
 	private List<Entry> entries;
 
 	//bi-directional many-to-one association to TaskStatus
@@ -124,12 +128,12 @@ public class Entry implements DbEntity {
 		this.notebook = notebook;
 	}
 
-	public Entry getEntry() {
-		return this.entry;
+	public Entry getParent() {
+		return this.parent;
 	}
 
-	public void setEntry(Entry entry) {
-		this.entry = entry;
+	public void setParent(Entry parent) {
+		this.parent = parent;
 	}
 
 	public List<Entry> getEntries() {
@@ -142,14 +146,14 @@ public class Entry implements DbEntity {
 
 	public Entry addEntry(Entry entry) {
 		getEntries().add(entry);
-		entry.setEntry(this);
+		entry.setParent(this);
 
 		return entry;
 	}
 
 	public Entry removeEntry(Entry entry) {
 		getEntries().remove(entry);
-		entry.setEntry(null);
+		entry.setParent(null);
 
 		return entry;
 	}

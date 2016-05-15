@@ -15,6 +15,7 @@ import com.tan90.notebook.persistence.DatabaseUtil;
 import com.tan90.notebook.persistence.dao.impl.UserDaoImpl;
 import com.tan90.notebook.persistence.entities.User;
 
+@Ignore
 public class UserDaoTest {
 	
 	private static UserDao userDao;

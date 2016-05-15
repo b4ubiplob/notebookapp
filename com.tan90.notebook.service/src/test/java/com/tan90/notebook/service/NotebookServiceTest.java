@@ -10,6 +10,7 @@ import org.junit.Test;
 import com.tan90.notebook.service.impl.NotebookServiceImpl;
 import com.tan90.notebook.to.NotebookTO;
 
+@Ignore
 public class NotebookServiceTest {
 
 	private static NotebookService notebookService;
@@ -19,17 +20,21 @@ public class NotebookServiceTest {
 		notebookService = new NotebookServiceImpl();
 	}
 	
-	private NotebookTO getNewNotebookTO() {
+	private NotebookTO getNewNotebookTO(int num) {
+		num++;
 		NotebookTO notebookTO = new NotebookTO();
-		notebookTO.setName("first notebook");
+		notebookTO.setName("test notebook " + num);
 		notebookTO.setUserId(1);
 		notebookTO.setNotebookTypeId(1);
 		return notebookTO;
 	}
 	
-	@Test @Ignore
+	@Test
 	public void testCreateNotebook() {
-		assertNotNull(notebookService.createNotebook(getNewNotebookTO()));
+		int size = notebookService.getAllNotebooks().size();
+		notebookService.createNotebook(getNewNotebookTO(size), 1);
+		int newSize = notebookService.getAllNotebooks().size();
+		assertEquals(newSize, size + 1);
 	}
 
 	@Test @Ignore

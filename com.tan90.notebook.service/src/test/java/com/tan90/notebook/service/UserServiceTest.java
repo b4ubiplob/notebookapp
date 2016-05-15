@@ -16,6 +16,7 @@ import com.tan90.notebook.service.impl.UserServiceImpl;
 import com.tan90.notebook.to.LoginTO;
 import com.tan90.notebook.to.UserTO;
 
+@Ignore
 public class UserServiceTest {
 
 	private static UserService userService;

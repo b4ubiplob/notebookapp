@@ -1,0 +1,9 @@
+<h2>{{notebook.name}}</h2>
+
+<ul>
+	<li ng-repeat="entry in notebook.entries">
+		<a href="entry_view.html">{{entry.title}}</a>
+		
+		<p>{{entry.description}}</p>
+	</li>
+</ul>

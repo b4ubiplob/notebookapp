@@ -6,13 +6,14 @@ import com.tan90.notebook.to.EntryTO;
 
 public interface EntryService {
 
-	public List<EntryTO> getEntriesOfNotebook(int notebookId);
 	
-	public EntryTO createEntry(EntryTO entryTO);
+	public boolean createEntry(EntryTO entryTO);
 	
 	public boolean removeEntry(int id);
 	
 	public boolean updateEntry(EntryTO entryTO);
+
+	public List<EntryTO> getEntriesOfUser(int userId);
 	
 	
 }

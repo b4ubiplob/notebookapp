@@ -31,15 +31,15 @@ public class DatabaseUtil {
 		entityManager = null;
 	}
 	public static void startTransaction() {
-		entityManager.getTransaction().begin();
+		getEntityManager().getTransaction().begin();
 	}
 	
 	public static void commitTransaction() {
-		entityManager.getTransaction().commit();
+		getEntityManager().getTransaction().commit();
 	}
 	
 	public static void rollbackTransaction() {
-		entityManager.getTransaction().rollback();
+		getEntityManager().getTransaction().rollback();
 	}
 
 }
